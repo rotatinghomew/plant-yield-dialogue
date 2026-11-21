@@ -1,0 +1,3 @@
+period,cutoff,unit,dimensions,late_min_delta,reissue_until
+2026-03,2026-04-02,piece,"region,customer",3,2026-04-20
+2026-04,2026-05-03,piece,"region,customer",4,2026-05-19

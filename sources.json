@@ -1,0 +1,134 @@
+{
+  "tables": {
+    "transfers": {
+      "key": [
+        "id"
+      ],
+      "columns": [
+        "id",
+        "period",
+        "sent",
+        "received",
+        "origin",
+        "destination",
+        "stage",
+        "qty",
+        "unit",
+        "equiv",
+        "conversion"
+      ]
+    },
+    "acceptances": {
+      "key": [
+        "receipt",
+        "revision"
+      ],
+      "columns": [
+        "receipt",
+        "revision",
+        "batch",
+        "customer",
+        "occurred",
+        "seen",
+        "qty",
+        "first_pass",
+        "rework"
+      ]
+    },
+    "checks": {
+      "key": [
+        "id"
+      ],
+      "columns": [
+        "id",
+        "transfer",
+        "original_lot",
+        "seen",
+        "first_failed",
+        "qty_inspected"
+      ]
+    },
+    "attribution": {
+      "key": [
+        "receipt",
+        "revision",
+        "owner"
+      ],
+      "columns": [
+        "receipt",
+        "revision",
+        "seen",
+        "owner",
+        "share",
+        "status"
+      ]
+    },
+    "close": {
+      "key": [
+        "period"
+      ],
+      "columns": [
+        "period",
+        "cutoff",
+        "unit",
+        "dimensions",
+        "late_min_delta",
+        "reissue_until"
+      ]
+    },
+    "sites": {
+      "key": [
+        "site"
+      ],
+      "columns": [
+        "site",
+        "region"
+      ]
+    },
+    "review": {
+      "key": [
+        "id"
+      ],
+      "columns": [
+        "id",
+        "receipt",
+        "owner",
+        "opened",
+        "closed",
+        "covered_qty"
+      ]
+    }
+  },
+  "links": [
+    [
+      "acceptances",
+      "batch",
+      "transfers",
+      "received"
+    ],
+    [
+      "attribution",
+      "receipt",
+      "acceptances",
+      "receipt"
+    ],
+    [
+      "review",
+      "receipt",
+      "acceptances",
+      "receipt"
+    ],
+    [
+      "checks",
+      "transfer",
+      "transfers",
+      "id"
+    ],
+    [
+      "transfers",
+      "period",
+      "close",
+      "period"
+    ]
+  ]
+}

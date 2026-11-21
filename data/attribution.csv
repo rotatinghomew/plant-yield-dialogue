@@ -1,0 +1,6 @@
+receipt,revision,seen,owner,share,status
+R01,1,2026-03-25,N,0.5,provisional
+R01,2,2026-04-04,N,0.35,signed
+R01,2,2026-04-04,S,0.65,signed
+R02,1,2026-03-27,N,1,signed
+R03,1,2026-04-16,S,0.7,signed

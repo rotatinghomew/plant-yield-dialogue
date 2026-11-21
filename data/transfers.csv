@@ -1,0 +1,10 @@
+id,period,sent,received,origin,destination,stage,qty,unit,equiv,conversion
+T01,2026-03,A0,A1,O,N,cut,60,piece,60,C1
+T02,2026-03,A0,A2,O,S,cut,40,piece,40,C1
+T03,2026-03,A1,A3,N,N,join,40,piece,40,C1
+T04,2026-03,A2,A3,S,N,join,20,piece,20,C1
+T05,2026-03,A2,A4,S,E,melt,12,kg,,
+T06,2026-03,A1,A5,N,N,pack,20,piece,20,C1
+T07,2026-04,B0,B1,O,S,cut,30,piece,30,C1
+T08,2026-04,B0,B2,O,N,cut,35,piece,35,C1
+T09,2026-04,B2,B3,N,S,melt,14,kg,35,C2
