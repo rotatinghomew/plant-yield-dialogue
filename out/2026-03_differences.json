@@ -1,0 +1,81 @@
+[
+  {
+    "type": "incomparable_volume",
+    "detail": {
+      "transfer": "T05",
+      "batch": "A4",
+      "stage": "melt",
+      "qty": 12,
+      "unit": "kg",
+      "reason": "无换算凭据（equiv 空缺），不可与标准件分母相加"
+    },
+    "trace_back": {
+      "transfer": "T05",
+      "unit": "kg",
+      "note": "暴露不可比量，不计零、不跨分母相加"
+    }
+  },
+  {
+    "type": "late_correction",
+    "detail": {
+      "receipt": "R01",
+      "period": "2026-03",
+      "issued_revision": 1,
+      "new_revision": 2,
+      "seen": "2026-04-08",
+      "first_pass_under_issued_basis": 54,
+      "first_pass_under_current_basis": 50,
+      "delta_first_pass": -4,
+      "rework_delta": 4,
+      "affects_first_pass_qualification": true,
+      "qualifies_for_reissue": true,
+      "reissue_window_open": true,
+      "reason": "首过标准件绝对变化 4 达到门槛 3，且在重发窗口内，符合该期重发条件"
+    },
+    "trace_back": {
+      "receipt": "R01",
+      "batch": "A3",
+      "cell": {
+        "region": "north",
+        "site": "N",
+        "customer": "CX"
+      },
+      "contributions": [
+        {
+          "transfer": "T03",
+          "source_batch": "A1",
+          "qty": 40,
+          "unit": "piece",
+          "equiv": 40,
+          "conversion": "C1",
+          "comparable": true,
+          "path": [
+            "T01",
+            "T03"
+          ],
+          "checks": [
+            "K01"
+          ]
+        },
+        {
+          "transfer": "T04",
+          "source_batch": "A2",
+          "qty": 20,
+          "unit": "piece",
+          "equiv": 20,
+          "conversion": "C1",
+          "comparable": true,
+          "path": [
+            "T02",
+            "T04"
+          ],
+          "checks": [
+            "K03",
+            "K02"
+          ]
+        }
+      ],
+      "unallocated_note": "未分配量见 responsibility_gap 与 responsibility_pivot"
+    }
+  }
+]

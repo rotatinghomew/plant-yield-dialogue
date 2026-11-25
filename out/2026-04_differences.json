@@ -1,0 +1,79 @@
+[
+  {
+    "type": "responsibility_gap",
+    "detail": {
+      "receipt": "R03",
+      "revision": 1,
+      "unclaimed": "2.1",
+      "unallocatable": 0,
+      "reasons": [
+        "责任确认份额仅覆盖 0.7，2.1 件返修尚未认领"
+      ]
+    },
+    "trace_back": {
+      "receipt": "R03",
+      "batch": "B1",
+      "cell": {
+        "region": "south",
+        "site": "S",
+        "customer": "CX"
+      },
+      "contributions": [
+        {
+          "transfer": "T07",
+          "source_batch": "B0",
+          "qty": 30,
+          "unit": "piece",
+          "equiv": 30,
+          "conversion": "C1",
+          "comparable": true,
+          "path": [
+            "T07"
+          ],
+          "checks": []
+        }
+      ],
+      "unallocated_note": "未分配量见 responsibility_gap 与 responsibility_pivot"
+    }
+  },
+  {
+    "type": "responsibility_gap",
+    "detail": {
+      "receipt": "R04",
+      "revision": 1,
+      "unclaimed": 0,
+      "unallocatable": 4,
+      "reasons": [
+        "无任何责任确认，可比来源的返修量无法分摊"
+      ]
+    },
+    "trace_back": {
+      "receipt": "R04",
+      "batch": "B3",
+      "cell": {
+        "region": "south",
+        "site": "S",
+        "customer": "CY"
+      },
+      "contributions": [
+        {
+          "transfer": "T09",
+          "source_batch": "B2",
+          "qty": 14,
+          "unit": "kg",
+          "equiv": 35,
+          "conversion": "C2",
+          "comparable": true,
+          "path": [
+            "T08",
+            "T09"
+          ],
+          "checks": [
+            "K04"
+          ]
+        }
+      ],
+      "unallocated_note": "未分配量见 responsibility_gap 与 responsibility_pivot"
+    }
+  }
+]

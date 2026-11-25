@@ -1,0 +1,89 @@
+{
+  "report_kind": "issued_monthly_report",
+  "period": "2026-04",
+  "basis": {
+    "mode": "已签发口径：仅采用 seen 不晚于关账时点的最新修订版",
+    "cutoff": "2026-05-03",
+    "unit": "piece",
+    "allowed_dimensions": [
+      "region",
+      "customer"
+    ],
+    "reissue_until": "2026-05-19"
+  },
+  "revision_set": {
+    "R03": 1,
+    "R04": 1
+  },
+  "pivots": {
+    "region": [
+      {
+        "key": "south",
+        "receipts": [
+          "R03",
+          "R04"
+        ],
+        "qty": 65,
+        "first_pass": 54,
+        "rework": 11,
+        "fpy": "0.830769",
+        "fpy_exact": "54/65"
+      }
+    ],
+    "customer": [
+      {
+        "key": "CX",
+        "receipts": [
+          "R03"
+        ],
+        "qty": 30,
+        "first_pass": 23,
+        "rework": 7,
+        "fpy": "0.766667",
+        "fpy_exact": "23/30"
+      },
+      {
+        "key": "CY",
+        "receipts": [
+          "R04"
+        ],
+        "qty": 35,
+        "first_pass": 31,
+        "rework": 4,
+        "fpy": "0.885714",
+        "fpy_exact": "31/35"
+      }
+    ]
+  },
+  "reconciliation": {
+    "period": "2026-04",
+    "dimension_totals": {
+      "region": {
+        "qty": 65,
+        "first_pass": 54,
+        "rework": 11
+      },
+      "customer": {
+        "qty": 65,
+        "first_pass": 54,
+        "rework": 11
+      },
+      "site": {
+        "qty": 65,
+        "first_pass": 54,
+        "rework": 11
+      },
+      "stage": {
+        "qty": 65,
+        "first_pass": 54,
+        "rework": 11
+      }
+    },
+    "balanced": true
+  },
+  "incomparable_volume": [],
+  "routing_gaps": [],
+  "duplicate_acceptances": [],
+  "late_corrections": [],
+  "publish_constraint": "只允许在 region、customer 维度的单元发布；不发布责任方与单件明细"
+}

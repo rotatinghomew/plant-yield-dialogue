@@ -1,0 +1,344 @@
+{
+  "report_kind": "working_package",
+  "period": "2026-03",
+  "basis": {
+    "mode": "处理中口径：无视关账时点，取每张回执最新修订版",
+    "cutoff": "2026-04-02",
+    "note": "仅用于生产组复盘分派，不作为对外已签数字"
+  },
+  "revision_set": {
+    "R01": 2,
+    "R02": 1
+  },
+  "production_pivots": {
+    "region": [
+      {
+        "key": "north",
+        "receipts": [
+          "R01",
+          "R02"
+        ],
+        "qty": 80,
+        "first_pass": 69,
+        "rework": 11,
+        "fpy": "0.862500",
+        "fpy_exact": "69/80"
+      }
+    ],
+    "customer": [
+      {
+        "key": "CX",
+        "receipts": [
+          "R01"
+        ],
+        "qty": 60,
+        "first_pass": 50,
+        "rework": 10,
+        "fpy": "0.833333",
+        "fpy_exact": "5/6"
+      },
+      {
+        "key": "CY",
+        "receipts": [
+          "R02"
+        ],
+        "qty": 20,
+        "first_pass": 19,
+        "rework": 1,
+        "fpy": "0.950000",
+        "fpy_exact": "19/20"
+      }
+    ],
+    "site": [
+      {
+        "key": "N",
+        "receipts": [
+          "R01",
+          "R02"
+        ],
+        "qty": 80,
+        "first_pass": 69,
+        "rework": 11,
+        "fpy": "0.862500",
+        "fpy_exact": "69/80"
+      }
+    ],
+    "stage": [
+      {
+        "key": "join",
+        "receipts": [
+          "R01"
+        ],
+        "qty": 60,
+        "first_pass": 50,
+        "rework": 10,
+        "fpy": "0.833333",
+        "fpy_exact": "5/6"
+      },
+      {
+        "key": "pack",
+        "receipts": [
+          "R02"
+        ],
+        "qty": 20,
+        "first_pass": 19,
+        "rework": 1,
+        "fpy": "0.950000",
+        "fpy_exact": "19/20"
+      }
+    ]
+  },
+  "responsibility_pivot": [
+    {
+      "key": "N",
+      "receipts": [
+        "R01",
+        "R02"
+      ],
+      "rework_qty": "4.5",
+      "signed": "4.5",
+      "provisional": 0,
+      "unclaimed": 0,
+      "unallocatable": 0,
+      "gap": 0,
+      "fpy": null,
+      "note": "责任量层级无共同交付分母，不计算首过率"
+    },
+    {
+      "key": "S",
+      "receipts": [
+        "R01"
+      ],
+      "rework_qty": "6.5",
+      "signed": "6.5",
+      "provisional": 0,
+      "unclaimed": 0,
+      "unallocatable": 0,
+      "gap": 0,
+      "fpy": null,
+      "note": "责任量层级无共同交付分母，不计算首过率"
+    }
+  ],
+  "responsibility_detail": [
+    {
+      "receipt": "R01",
+      "revision": 2,
+      "rework_qty": 10,
+      "signed": 10,
+      "provisional": 0,
+      "unclaimed": 0,
+      "unallocatable": 0,
+      "gap": 0,
+      "allocations": [
+        {
+          "owner": "N",
+          "status": "signed",
+          "share": "0.35",
+          "qty": "3.5",
+          "evidence": [
+            "attribution:R01#r2:N"
+          ]
+        },
+        {
+          "owner": "S",
+          "status": "signed",
+          "share": "0.65",
+          "qty": "6.5",
+          "evidence": [
+            "attribution:R01#r2:S"
+          ]
+        }
+      ],
+      "reasons": []
+    },
+    {
+      "receipt": "R02",
+      "revision": 1,
+      "rework_qty": 1,
+      "signed": 1,
+      "provisional": 0,
+      "unclaimed": 0,
+      "unallocatable": 0,
+      "gap": 0,
+      "allocations": [
+        {
+          "owner": "N",
+          "status": "signed",
+          "share": 1,
+          "qty": 1,
+          "evidence": [
+            "attribution:R02#r1:N"
+          ]
+        }
+      ],
+      "reasons": []
+    }
+  ],
+  "traceable_failures": [
+    {
+      "receipt": "R01",
+      "revision": 2,
+      "check": "K01",
+      "transfer": "T03",
+      "original_lot": "A1",
+      "first_failed": 1,
+      "qty_inspected": 12,
+      "handover_path": [
+        "T01",
+        "T03"
+      ],
+      "note": "合并前可追溯检验事实，仅用于追溯与重复验收识别，不重复扣量"
+    },
+    {
+      "receipt": "R01",
+      "revision": 2,
+      "check": "K03",
+      "transfer": "T02",
+      "original_lot": "A2",
+      "first_failed": 2,
+      "qty_inspected": 8,
+      "handover_path": [
+        "T02",
+        "T04"
+      ],
+      "note": "合并前可追溯检验事实，仅用于追溯与重复验收识别，不重复扣量"
+    },
+    {
+      "receipt": "R01",
+      "revision": 2,
+      "check": "K02",
+      "transfer": "T04",
+      "original_lot": "A2",
+      "first_failed": 4,
+      "qty_inspected": 20,
+      "handover_path": [
+        "T02",
+        "T04"
+      ],
+      "note": "合并前可追溯检验事实，仅用于追溯与重复验收识别，不重复扣量"
+    }
+  ],
+  "review": {
+    "period": "2026-03",
+    "voucher_states": [
+      {
+        "id": "V1",
+        "receipt": "R01",
+        "owner": "N",
+        "state": "REOPEN",
+        "covered_qty": 6,
+        "reason": "复盘已结案但返修数量影响扩大（现 10，已覆盖 6），需再开；原记录保留",
+        "evidence": [
+          "review:V1"
+        ]
+      },
+      {
+        "id": "V2",
+        "receipt": "R02",
+        "owner": "N",
+        "state": "RESOLVED_BY_EVIDENCE",
+        "covered_qty": 1,
+        "reason": "未处理差异已被新凭证完整覆盖，确认不再待办，不重复发单",
+        "evidence": [
+          "review:V2"
+        ]
+      }
+    ],
+    "new_review_items": [
+      {
+        "receipt": "R01",
+        "revision": 2,
+        "owner": "S",
+        "qty": "6.5",
+        "bucket": "signed",
+        "reason": "正式确认责任未被既有复盘单覆盖",
+        "cell_ref": {
+          "period": "2026-03",
+          "region": "north",
+          "site": "N",
+          "stage": "join",
+          "customer": "CX",
+          "batch": "A3"
+        },
+        "evidence": [
+          "attribution:R01#r2:S"
+        ]
+      }
+    ]
+  },
+  "reconciliation": {
+    "period": "2026-03",
+    "dimension_totals": {
+      "region": {
+        "qty": 80,
+        "first_pass": 69,
+        "rework": 11
+      },
+      "customer": {
+        "qty": 80,
+        "first_pass": 69,
+        "rework": 11
+      },
+      "site": {
+        "qty": 80,
+        "first_pass": 69,
+        "rework": 11
+      },
+      "stage": {
+        "qty": 80,
+        "first_pass": 69,
+        "rework": 11
+      }
+    },
+    "balanced": true
+  },
+  "routing_gaps": [],
+  "duplicate_acceptances": [],
+  "incomparable_volume": [
+    {
+      "transfer": "T05",
+      "batch": "A4",
+      "stage": "melt",
+      "qty": 12,
+      "unit": "kg",
+      "reason": "无换算凭据（equiv 空缺），不可与标准件分母相加"
+    }
+  ],
+  "late_corrections": [
+    {
+      "receipt": "R01",
+      "period": "2026-03",
+      "issued_revision": 1,
+      "new_revision": 2,
+      "seen": "2026-04-08",
+      "first_pass_under_issued_basis": 54,
+      "first_pass_under_current_basis": 50,
+      "delta_first_pass": -4,
+      "rework_delta": 4,
+      "affects_first_pass_qualification": true,
+      "qualifies_for_reissue": true,
+      "reissue_window_open": true,
+      "reason": "首过标准件绝对变化 4 达到门槛 3，且在重发窗口内，符合该期重发条件"
+    }
+  ],
+  "attribution_only_changes": [
+    {
+      "receipt": "R01",
+      "revision": 2,
+      "owner": "N",
+      "share": "7/20",
+      "status": "signed",
+      "seen": "2026-04-04",
+      "reason": "关账后责任确认，只进对内复盘，不改变对外已签产量"
+    },
+    {
+      "receipt": "R01",
+      "revision": 2,
+      "owner": "S",
+      "share": "13/20",
+      "status": "signed",
+      "seen": "2026-04-04",
+      "reason": "关账后责任确认，只进对内复盘，不改变对外已签产量"
+    }
+  ]
+}

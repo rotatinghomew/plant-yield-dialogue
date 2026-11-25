@@ -1,0 +1,272 @@
+{
+  "report_kind": "working_package",
+  "period": "2026-04",
+  "basis": {
+    "mode": "处理中口径：无视关账时点，取每张回执最新修订版",
+    "cutoff": "2026-05-03",
+    "note": "仅用于生产组复盘分派，不作为对外已签数字"
+  },
+  "revision_set": {
+    "R03": 1,
+    "R04": 1
+  },
+  "production_pivots": {
+    "region": [
+      {
+        "key": "south",
+        "receipts": [
+          "R03",
+          "R04"
+        ],
+        "qty": 65,
+        "first_pass": 54,
+        "rework": 11,
+        "fpy": "0.830769",
+        "fpy_exact": "54/65"
+      }
+    ],
+    "customer": [
+      {
+        "key": "CX",
+        "receipts": [
+          "R03"
+        ],
+        "qty": 30,
+        "first_pass": 23,
+        "rework": 7,
+        "fpy": "0.766667",
+        "fpy_exact": "23/30"
+      },
+      {
+        "key": "CY",
+        "receipts": [
+          "R04"
+        ],
+        "qty": 35,
+        "first_pass": 31,
+        "rework": 4,
+        "fpy": "0.885714",
+        "fpy_exact": "31/35"
+      }
+    ],
+    "site": [
+      {
+        "key": "S",
+        "receipts": [
+          "R03",
+          "R04"
+        ],
+        "qty": 65,
+        "first_pass": 54,
+        "rework": 11,
+        "fpy": "0.830769",
+        "fpy_exact": "54/65"
+      }
+    ],
+    "stage": [
+      {
+        "key": "cut",
+        "receipts": [
+          "R03"
+        ],
+        "qty": 30,
+        "first_pass": 23,
+        "rework": 7,
+        "fpy": "0.766667",
+        "fpy_exact": "23/30"
+      },
+      {
+        "key": "melt",
+        "receipts": [
+          "R04"
+        ],
+        "qty": 35,
+        "first_pass": 31,
+        "rework": 4,
+        "fpy": "0.885714",
+        "fpy_exact": "31/35"
+      }
+    ]
+  },
+  "responsibility_pivot": [
+    {
+      "key": "S",
+      "receipts": [
+        "R03"
+      ],
+      "rework_qty": "4.9",
+      "signed": "4.9",
+      "provisional": 0,
+      "unclaimed": 0,
+      "unallocatable": 0,
+      "gap": 0,
+      "fpy": null,
+      "note": "责任量层级无共同交付分母，不计算首过率"
+    },
+    {
+      "key": "UNASSIGNED",
+      "receipts": [
+        "R03",
+        "R04"
+      ],
+      "rework_qty": "6.1",
+      "signed": 0,
+      "provisional": 0,
+      "unclaimed": "2.1",
+      "unallocatable": 4,
+      "gap": "6.1",
+      "fpy": null,
+      "note": "责任量层级无共同交付分母，不计算首过率"
+    }
+  ],
+  "responsibility_detail": [
+    {
+      "receipt": "R03",
+      "revision": 1,
+      "rework_qty": 7,
+      "signed": "4.9",
+      "provisional": 0,
+      "unclaimed": "2.1",
+      "unallocatable": 0,
+      "gap": "2.1",
+      "allocations": [
+        {
+          "owner": "S",
+          "status": "signed",
+          "share": "0.7",
+          "qty": "4.9",
+          "evidence": [
+            "attribution:R03#r1:S"
+          ]
+        }
+      ],
+      "reasons": [
+        "责任确认份额仅覆盖 0.7，2.1 件返修尚未认领"
+      ]
+    },
+    {
+      "receipt": "R04",
+      "revision": 1,
+      "rework_qty": 4,
+      "signed": 0,
+      "provisional": 0,
+      "unclaimed": 0,
+      "unallocatable": 4,
+      "gap": 4,
+      "allocations": [],
+      "reasons": [
+        "无任何责任确认，可比来源的返修量无法分摊"
+      ]
+    }
+  ],
+  "traceable_failures": [
+    {
+      "receipt": "R04",
+      "revision": 1,
+      "check": "K04",
+      "transfer": "T09",
+      "original_lot": "B2",
+      "first_failed": 4,
+      "qty_inspected": 20,
+      "handover_path": [
+        "T08",
+        "T09"
+      ],
+      "note": "合并前可追溯检验事实，仅用于追溯与重复验收识别，不重复扣量"
+    }
+  ],
+  "review": {
+    "period": "2026-04",
+    "voucher_states": [],
+    "new_review_items": [
+      {
+        "receipt": "R03",
+        "revision": 1,
+        "owner": "S",
+        "qty": "4.9",
+        "bucket": "signed",
+        "reason": "正式确认责任未被既有复盘单覆盖",
+        "cell_ref": {
+          "period": "2026-04",
+          "region": "south",
+          "site": "S",
+          "stage": "cut",
+          "customer": "CX",
+          "batch": "B1"
+        },
+        "evidence": [
+          "attribution:R03#r1:S"
+        ]
+      },
+      {
+        "receipt": "R03",
+        "revision": 1,
+        "owner": "UNASSIGNED",
+        "qty": "2.1",
+        "bucket": "unclaimed",
+        "reason": "份额未覆盖的返修量，尚未有责任方认领",
+        "cell_ref": {
+          "period": "2026-04",
+          "region": "south",
+          "site": "S",
+          "stage": "cut",
+          "customer": "CX",
+          "batch": "B1"
+        },
+        "evidence": [
+          "attribution:R03#r1"
+        ]
+      },
+      {
+        "receipt": "R04",
+        "revision": 1,
+        "owner": "UNASSIGNED",
+        "qty": 4,
+        "bucket": "unallocatable",
+        "reason": "无责任确认或缺换算凭据，返修量无法分摊",
+        "cell_ref": {
+          "period": "2026-04",
+          "region": "south",
+          "site": "S",
+          "stage": "melt",
+          "customer": "CY",
+          "batch": "B3"
+        },
+        "evidence": [
+          "acceptance:R04#r1"
+        ]
+      }
+    ]
+  },
+  "reconciliation": {
+    "period": "2026-04",
+    "dimension_totals": {
+      "region": {
+        "qty": 65,
+        "first_pass": 54,
+        "rework": 11
+      },
+      "customer": {
+        "qty": 65,
+        "first_pass": 54,
+        "rework": 11
+      },
+      "site": {
+        "qty": 65,
+        "first_pass": 54,
+        "rework": 11
+      },
+      "stage": {
+        "qty": 65,
+        "first_pass": 54,
+        "rework": 11
+      }
+    },
+    "balanced": true
+  },
+  "routing_gaps": [],
+  "duplicate_acceptances": [],
+  "incomparable_volume": [],
+  "late_corrections": [],
+  "attribution_only_changes": []
+}

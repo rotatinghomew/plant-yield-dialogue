@@ -1,0 +1,114 @@
+{
+  "report_kind": "issued_monthly_report",
+  "period": "2026-03",
+  "basis": {
+    "mode": "已签发口径：仅采用 seen 不晚于关账时点的最新修订版",
+    "cutoff": "2026-04-02",
+    "unit": "piece",
+    "allowed_dimensions": [
+      "region",
+      "customer"
+    ],
+    "reissue_until": "2026-04-20"
+  },
+  "revision_set": {
+    "R01": 1,
+    "R02": 1
+  },
+  "pivots": {
+    "region": [
+      {
+        "key": "north",
+        "receipts": [
+          "R01",
+          "R02"
+        ],
+        "qty": 80,
+        "first_pass": 73,
+        "rework": 7,
+        "fpy": "0.912500",
+        "fpy_exact": "73/80"
+      }
+    ],
+    "customer": [
+      {
+        "key": "CX",
+        "receipts": [
+          "R01"
+        ],
+        "qty": 60,
+        "first_pass": 54,
+        "rework": 6,
+        "fpy": "0.900000",
+        "fpy_exact": "9/10"
+      },
+      {
+        "key": "CY",
+        "receipts": [
+          "R02"
+        ],
+        "qty": 20,
+        "first_pass": 19,
+        "rework": 1,
+        "fpy": "0.950000",
+        "fpy_exact": "19/20"
+      }
+    ]
+  },
+  "reconciliation": {
+    "period": "2026-03",
+    "dimension_totals": {
+      "region": {
+        "qty": 80,
+        "first_pass": 73,
+        "rework": 7
+      },
+      "customer": {
+        "qty": 80,
+        "first_pass": 73,
+        "rework": 7
+      },
+      "site": {
+        "qty": 80,
+        "first_pass": 73,
+        "rework": 7
+      },
+      "stage": {
+        "qty": 80,
+        "first_pass": 73,
+        "rework": 7
+      }
+    },
+    "balanced": true
+  },
+  "incomparable_volume": [
+    {
+      "transfer": "T05",
+      "batch": "A4",
+      "stage": "melt",
+      "qty": 12,
+      "unit": "kg",
+      "reason": "无换算凭据（equiv 空缺），不可与标准件分母相加"
+    }
+  ],
+  "routing_gaps": [],
+  "duplicate_acceptances": [],
+  "late_corrections": [
+    {
+      "receipt": "R01",
+      "period": "2026-03",
+      "issued_revision": 1,
+      "new_revision": 2,
+      "seen": "2026-04-08",
+      "first_pass_under_issued_basis": 54,
+      "first_pass_under_current_basis": 50,
+      "delta_first_pass": -4,
+      "rework_delta": 4,
+      "affects_first_pass_qualification": true,
+      "qualifies_for_reissue": true,
+      "reissue_window_open": true,
+      "reason": "首过标准件绝对变化 4 达到门槛 3，且在重发窗口内，符合该期重发条件"
+    }
+  ],
+  "publish_constraint": "只允许在 region、customer 维度的单元发布；不发布责任方与单件明细"
+}
